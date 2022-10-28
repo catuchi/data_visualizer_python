@@ -49,8 +49,14 @@ p.hbar(
     factors=car_list
   ),
   fill_alpha=0.9,
-  source=source
+  source=source,
+  legend='Car'
 )
+
+# Add Legend
+p.legend.orientation='vertical'
+p.legend.location='top_right'
+p.legend.label_text_font_size = '10px'
 
 # Add Tooltips
 hover = HoverTool()
