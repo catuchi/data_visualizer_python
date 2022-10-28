@@ -1,5 +1,7 @@
 from bokeh.plotting import figure, output_file, show, save, ColumnDataSource
 from bokeh.models.tools import HoverTool
+from bokeh.transform import factor_cmap
+from bokeh.palettes import Blues8
 import pandas
 
 # figure - is used to generate plots (graphs)
@@ -40,8 +42,13 @@ p.hbar(
   right='Horsepower',
   left=0,
   height=0.4,
-  color='orange',
-  fill_alpha=0.5,
+  # color='orange',
+  fill_color=factor_cmap(
+    'Car',
+    palette=Blues8,
+    factors=car_list
+  ),
+  fill_alpha=0.9,
   source=source
 )
 
