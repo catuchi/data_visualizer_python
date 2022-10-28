@@ -2,6 +2,7 @@ from bokeh.plotting import figure, output_file, show, save, ColumnDataSource
 from bokeh.models.tools import HoverTool
 from bokeh.transform import factor_cmap
 from bokeh.palettes import Blues8
+from bokeh.embed import components
 import pandas
 
 # figure - is used to generate plots (graphs)
@@ -76,3 +77,8 @@ p.add_tools(hover)
 
 # Save file
 save(p)
+
+# Print out div and script (if you want to insert it to a html or embed it)
+# script, div = components(p)
+# print(div)
+# print(script)
